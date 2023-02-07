@@ -9,6 +9,10 @@ const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => { dispatch(getBooks()); }, [dispatch]);
 
+  // const search = ()
+  const topic = '';
+  const search = '';
+
   const {
     count, next, previous, results,
   } = books;
@@ -16,6 +20,11 @@ const Home = () => {
   return (
     <div>
       <h1>GUTENBÜCHER</h1>
+      <form onSubmit={console.log('SUBMIT', topic, search)}>
+        <input type="text" placeholder="topic" value={topic} />
+        <input type="text" placeholder="Search author/title" value={search} />
+        <button type="submit">Search</button>
+      </form>
       <p>
         {((/page=\d*/g).test(previous)) && (
         <span>
