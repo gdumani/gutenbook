@@ -20,7 +20,9 @@ const BookItem = (props) => {
 BookItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  authors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  authors: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  })).isRequired,
   subjects: PropTypes.arrayOf(PropTypes.string).isRequired,
   languages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

@@ -6,12 +6,14 @@ import Book from './components/Book';
 
 const App = () => (
   <BrowserRouter>
-    <div className="app">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/book" element={<Book />} />
-      </Routes>
-    </div>
+    <React.StrictMode>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/book" element={<Book />} />
+        </Routes>
+      </div>
+    </React.StrictMode>
   </BrowserRouter>
 
 );
