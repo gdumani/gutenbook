@@ -7,10 +7,12 @@ const BookItem = (props) => {
   } = props;
   return (
     <tr>
-      <td>{title}</td>
-      <td>{authors}</td>
-      <td>{subjects}</td>
-      <td>{languages}</td>
+      <td>
+        {`${title} id: ${id}`}
+      </td>
+      <td>{(authors[0]) ? authors[0].name : '**No data**'}</td>
+      <td>{subjects[0] ? subjects[0] : '**NO DATA**'}</td>
+      <td>{languages[0]}</td>
     </tr>
   );
 };
@@ -18,9 +20,9 @@ const BookItem = (props) => {
 BookItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  authors: PropTypes.string.isRequired,
-  subjects: PropTypes.string.isRequired,
-  languages: PropTypes.string.isRequired,
+  authors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  subjects: PropTypes.arrayOf(PropTypes.string).isRequired,
+  languages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default BookItem;
