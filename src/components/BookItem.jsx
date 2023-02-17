@@ -7,8 +7,9 @@ const BookItem = (props) => {
   } = props;
   return (
     <tr>
-      <td>{id}</td>
-      <td>{title}</td>
+      <td>
+        {`${title} id: ${id}`}
+      </td>
       <td>{(authors[0]) ? authors[0].name : '**No data**'}</td>
       <td>{subjects[0] ? subjects[0] : '**NO DATA**'}</td>
       <td>{languages[0]}</td>
