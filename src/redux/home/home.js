@@ -1,13 +1,12 @@
 import axios from 'axios';
 
 const GET_BOOKS = 'GET_BOOKS';
-const URL = 'https://gutendex.com/books/';
+export const URL = 'https://gutendex.com/books';
 
 const initialState = [];
 
-export const getBooks = (url = URL) => async (dispatch) => {
+export const getBooks = (url = `${URL}/`) => async (dispatch) => {
   const response = await axios.get(url).then((apiBooks) => (apiBooks.data));
-
   dispatch({
     type: GET_BOOKS,
     payload: response,
