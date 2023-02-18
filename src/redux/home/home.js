@@ -19,20 +19,19 @@ export const setFilter = (name, value) => ({
   payload: { [name]: value },
 });
 
-export const newUrl = () => '/';
-// {
-//   const { topic, search, languages } = searchFilter;
-//   return `${URL}${(topic || search || languages) && '?'}${topic && `topic=${topic}`}`
-// + `${topic && search && '&&'}${search && `search=${search}`}`
-// + `${(topic || search) && languages && '&&'}${languages && `languages=${languages}`}`;
-// };
+export const newUrl = (searchFilter) => {
+  const { topic, search, languages } = searchFilter;
+  return `${URL}${(topic || search || languages) && '?'}${topic && `topic=${topic}`}`
++ `${topic && search && '&&'}${search && `search=${search}`}`
++ `${(topic || search) && languages && '&&'}${languages && `languages=${languages}`}`;
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BOOKS:
       return { searchFilter: state.searchFilter, ...action.payload };
     case SET_FILTER:
-      return console.log({ ...state, searchFilter: { ...state.searchFilter, ...action.payload } });
+      return { ...state, searchFilter: { ...state.searchFilter, ...action.payload } };
     default:
       return state;
   }

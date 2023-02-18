@@ -9,11 +9,11 @@ const Home = () => {
   useEffect(() => { dispatch(getBooks()); }, [dispatch]);
 
   const {
-    count, next, previous, results,
+    count, next, previous, results, searchFilter,
   } = books;
-  // const {
-  //   topic, search, languages,
-  // } = books.searchFilter;
+  const {
+    topic, search, languages,
+  } = searchFilter;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,10 +23,10 @@ const Home = () => {
     <div>
       <h1>GUTENBÜCHER</h1>
       <form>
-        <input type="text" name="topic" placeholder="topic" onChange={handleChange} defaultValue="" />
-        <input type="text" name="search" placeholder="Search author/title" onChange={handleChange} defaultValue="" />
-        <input type="text" name="languages" placeholder="languages separated by coma" onChange={handleChange} defaultValue="" />
-        <button type="button" onClick={() => dispatch(getBooks(newUrl()))}>Search</button>
+        <input type="text" name="topic" placeholder="topic" onChange={handleChange} defaultValue={topic} />
+        <input type="text" name="search" placeholder="Search author/title" onChange={handleChange} defaultValue={search} />
+        <input type="text" name="languages" placeholder="languages separated by coma" onChange={handleChange} defaultValue={languages} />
+        <button type="button" onClick={() => dispatch(getBooks(newUrl(searchFilter)))}>Search</button>
       </form>
       <p>
         {((/page=\d*/g).test(previous)) && (
