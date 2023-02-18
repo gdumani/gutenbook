@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const GET_BOOKS = 'GET_BOOKS';
 const SET_FILTER = 'SET_FILTER';
+const CLEAR_FILTER = 'CLEAR_FILTER';
 const URL = 'https://gutendex.com/books';
 
 const initialState = { searchFilter: { topic: '', search: '', languages: '' } };
@@ -19,6 +20,11 @@ export const setFilter = (name, value) => ({
   payload: { [name]: value },
 });
 
+export const clearFilter = () => ({
+  type: CLEAR_FILTER,
+  payload: { searchFilter: { topic: '', search: '', languages: '' } },
+});
+
 export const newUrl = (searchFilter) => {
   const { topic, search, languages } = searchFilter;
   return `${URL}${(topic || search || languages) && '?'}${topic && `topic=${topic}`}`
@@ -32,6 +38,8 @@ const reducer = (state = initialState, action) => {
       return { searchFilter: state.searchFilter, ...action.payload };
     case SET_FILTER:
       return { ...state, searchFilter: { ...state.searchFilter, ...action.payload } };
+    case CLEAR_FILTER:
+      return { ...state, ...action.payload };
     default:
       return state;
   }

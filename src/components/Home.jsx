@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getBooks, newUrl, setFilter } from '../redux/home/home';
+import {
+  clearFilter, getBooks, newUrl, setFilter,
+} from '../redux/home/home';
 import BookItem from './BookItem';
 
 const Home = () => {
@@ -23,10 +25,11 @@ const Home = () => {
     <div>
       <h1>GUTENBÜCHER</h1>
       <form>
-        <input type="text" name="topic" placeholder="topic" onChange={handleChange} defaultValue={topic} />
-        <input type="text" name="search" placeholder="Search author/title" onChange={handleChange} defaultValue={search} />
-        <input type="text" name="languages" placeholder="languages separated by coma" onChange={handleChange} defaultValue={languages} />
+        <input type="text" name="topic" placeholder="topic" onChange={handleChange} value={topic} />
+        <input type="text" name="search" placeholder="Search author/title" onChange={handleChange} value={search} />
+        <input type="text" name="languages" placeholder="languages separated by coma" onChange={handleChange} value={languages} />
         <button type="button" onClick={() => dispatch(getBooks(newUrl(searchFilter)))}>Search</button>
+        <button type="button" onClick={() => dispatch(clearFilter())}>Clear</button>
       </form>
       <p>
         {((/page=\d*/g).test(previous)) && (
