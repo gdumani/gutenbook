@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getBooks, URL } from '../redux/home/home';
+import { getBooks, newUrl, setFilter } from '../redux/home/home';
 import BookItem from './BookItem';
 
 const Home = () => {
@@ -8,25 +8,24 @@ const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => { dispatch(getBooks()); }, [dispatch]);
 
-  let topic = '';
-  let search = '';
-  let languages = '';
-
-  const newUrl = () => `${URL}${(topic || search || languages) && '?'}${topic && `topic=${topic}`}`
-  + `${topic && search && '&&'}${search && `search=${search}`}`
-  + `${(topic || search) && languages && '&&'}${languages && `languages=${languages}`}`;
-
   const {
     count, next, previous, results,
   } = books;
+  // const {
+  //   topic, search, languages,
+  // } = books.searchFilter;
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    dispatch(setFilter(name, value));
+  };
   return (
     <div>
       <h1>GUTENBÜCHER</h1>
       <form>
-        <input type="text" placeholder="topic" onChange={(e) => { topic = e.target.value; }} defaultValue={topic} />
-        <input type="text" placeholder="Search author/title" onChange={(e) => { search = e.target.value; }} defaultValue={search} />
-        <input type="text" placeholder="languages separated by coma" onChange={(e) => { languages = e.target.value; }} defaultValue={languages} />
+        <input type="text" name="topic" placeholder="topic" onChange={handleChange} defaultValue="" />
+        <input type="text" name="search" placeholder="Search author/title" onChange={handleChange} defaultValue="" />
+        <input type="text" name="languages" placeholder="languages separated by coma" onChange={handleChange} defaultValue="" />
         <button type="button" onClick={() => dispatch(getBooks(newUrl()))}>Search</button>
       </form>
       <p>
