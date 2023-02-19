@@ -9,11 +9,24 @@ const BookItem = (props) => {
   const image = `https://www.gutenberg.org/cache/epub/${id}/pg${id}.cover.small.jpg`;
   return (
     <Link to={`book/${id}`} className="grid-item">
-      <p>{id}</p>
+      <p>
+        id:
+        {id}
+      </p>
       <img src={image} alt="cover" />
       <h4>{title}</h4>
       <p>{(authors[0]) ? authors[0].name : '**No data**'}</p>
-      <p>{languages[0]}</p>
+      <div>
+        {languages.map((lang, i) => {
+          const key = i;
+          return (
+            <span key={key}>
+              {lang}
+              {' '}
+            </span>
+          );
+        })}
+      </div>
     </Link>
   );
 };
