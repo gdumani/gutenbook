@@ -10,7 +10,7 @@ const App = () => (
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/book" element={<Book />} />
+          <Route path="/book/:id" element={<Book />} />
         </Routes>
       </div>
     </React.StrictMode>
