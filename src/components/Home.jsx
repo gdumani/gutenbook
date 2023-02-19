@@ -48,23 +48,23 @@ const Home = () => {
         {next && <button type="button" onClick={() => dispatch(getBooks(next))}>Next</button>}
       </p>
 
-      <table>
-        <tbody>
-          {(results) && results.map((bookItem) => {
-            const {
-              id, title, authors, subjects, languages,
-            } = bookItem;
-            return (
-              <BookItem
-                key={id}
-                {...{
-                  id, title, authors, subjects, languages,
-                }}
-              />
-            );
-          })}
-        </tbody>
-      </table>
+      <div className="grid-container">
+
+        {(results) && results.map((bookItem) => {
+          const {
+            id, title, authors, subjects, languages,
+          } = bookItem;
+          return (
+            <BookItem
+              key={id}
+              {...{
+                id, title, authors, subjects, languages,
+              }}
+            />
+          );
+        })}
+
+      </div>
 
     </div>
   );
