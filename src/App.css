@@ -1,11 +1,15 @@
 .main {
   background-color: #FF5698;
 }
-h1 {
+
+h1, h2 {
   text-align: center;
   padding: .5rem;
 }
 
+img {
+  margin-left: 1rem;
+}
 .pages {
   position: sticky;
   top: 0;
@@ -22,19 +26,33 @@ h1 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.grid-item {
+.grid-item,
+.details-item {
   height: auto;
-  background-color: #B53360;
+  background-color: #CC4378;
   color:white;
   text-decoration: none;
   padding-left: 1rem;
 }
 
+
 .grid-item:nth-child(1),
 .grid-item:nth-child(4n),
-.grid-item:nth-child(4n+1) {
+.grid-item:nth-child(4n+1),
+.details-item:nth-child(even) {
   background-color: #DF4783;
 }
+
+.details-item:nth-child(odd) {
+  background-color: #CC4378;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
 
 
 
