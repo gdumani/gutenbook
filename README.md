@@ -69,7 +69,7 @@ It also links to the HTML readable version of the selected book. The listings ar
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Check the live demo [here]()
+- Check the live demo [here](https://gutenbook.onrender.com/)
 - Check a video demo [here]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
