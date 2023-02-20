@@ -1,8 +1,13 @@
+@font-face {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  src: url(/src/assets/Gill\ Sans\ Medium.otf);
+}
+
 body {
   margin: auto;
   padding: 0;
-  font-family: sans-serif;
-  max-width: 512px ;
+  font-family: 'Lato', sans-serif;
+  max-width: 512px;
   color: white;
   background-color: gray;
 }
