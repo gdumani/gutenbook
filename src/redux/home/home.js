@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const GET_BOOKS = 'GET_BOOKS';
-const SET_FILTER = 'SET_FILTER';
-const CLEAR_FILTER = 'CLEAR_FILTER';
+export const GET_BOOKS = 'GET_BOOKS';
+export const SET_FILTER = 'SET_FILTER';
+export const CLEAR_FILTER = 'CLEAR_FILTER';
 const URL = 'https://gutendex.com/books';
 
 const initialState = { searchFilter: { topic: '', search: '', languages: '' } };
