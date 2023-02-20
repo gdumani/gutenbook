@@ -6,7 +6,6 @@ import backArrow from '../assets/back-white.png';
 const Book = () => {
   const { id } = useParams();
   const [book] = useSelector((state) => state.homeReducer.results.filter((bk) => bk.id === +id));
-  console.log(book);
   const image = `https://www.gutenberg.org/cache/epub/${id}/pg${id}.cover.medium.jpg`;
 
   return (
