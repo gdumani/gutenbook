@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import backArrow from '../assets/back-white.png';
 
 const Book = () => {
   const { id } = useParams();
@@ -10,6 +11,9 @@ const Book = () => {
 
   return (
     <div className="main">
+      <Link to="/">
+        <img src={backArrow} alt="back" className="back" />
+      </Link>
       <h2>{book.title}</h2>
       <img src={image} alt="book.name" />
       <div className="details-grid">
