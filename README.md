@@ -1,71 +1,141 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+<a name="readme-top"></a>
 
-# Gutenbook
+<!-- TABLE OF CONTENTS -->
 
-> A react/redux based application to access the Gutenberg Project collection of books in a mobile friendly format.
+# 📗 Table of Contents
 
-## Built With
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-- HTML
-- JavaScript
-- CSS
-- React
-- Redux
-- Gutenindex API
+<!-- PROJECT DESCRIPTION -->
 
-## Live Demo
+# 📖 [GutenBücher] <a name="about-project"></a>
 
-[Live Demo Link]()
-## Requisites
-node v16.13
-npm v8.7
+**GutenBücher** is a React-Redux webapp using the [Gutendex API ](https://gutendex.com/) to get access to the [Gutenber Project](https://www.gutenberg.org/) library of more 60,000 free books. The app allows to search books by topic, title/author and language.
+It also links to the HTML readable version of the selected book. The listings are sorted by popularity according to the number of downloads they get
 
-## Installation
+## 🛠 Built With <a name="built-with"></a>
 
-Clone the repository: 
+### Tech Stack <a name="tech-stack"></a>
 
-`git clone https://github.com/gdumani/gutenbook.git`
+<details>
+  <summary>Functionality</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+  </ul>
+</details>
 
-`cd spacex-project`
+<details>
+  <summary>Front End</summary>
+  <ul>
+    <li><a href="https://reactjs.org/docs/getting-started.html">React</a></li>
+  </ul>
+</details>
 
-`git checkout dev`
+<details>
+<summary>Styling</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+  </ul>
+</details>
 
-Load required npm software
+<!-- Features -->
 
-`npm install`
+### Key Features <a name="key-features"></a>
+
+- **Single page app**
+- **Books listing with filtering and search functionality**
+- **Book details with direct access to a readable html version**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- Check the live demo [here]()
+- Check a video demo [here]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+NodeJS v16.13
+NPM v8.7
+
+### Setup
+
+Clone this repository to your desired folder:
+
+``` 
+    cd my-folder
+    git clone git@github.com:gdumani/gutenbook.git
+    cd gutenbook
+    git checkout feat/struct
+```
+
+Install dependencies:
+
+```
+    npm install
+```
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-`npm start`
+### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the app in development mode.
+Open [http://localhost:3000/](http://localhost:3000/) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-`npm test`
+### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
-`npm run build`
+### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
+Builds the app for production to the `dist` folder.\
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Usage
 
-`npm run eject`
+To run the project open the html file in your web browser. 
+The application format is optimized to run on a mobile phone 
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Authors
+<!-- AUTHORS -->
 
+## 👥 Author <a name="authors"></a>
 
 👤 **Giancarlo Dumani**
 
@@ -73,22 +143,65 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Twitter: [@twitterhandle](https://twitter.com/gdumani1)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/gdumani/)
 
-## 🤝 Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Refine search and filtering with pull downs for topics and languages**
+- [ ] **Add option to download books in epub or pdf format**
+- [ ] **Include other sorting options**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Give a ⭐️ if you like this project!
+<!-- SUPPORT -->
 
-## Acknowledgments
+## ⭐️ Show your support <a name="support"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+If you like this project feel free to give it a star.
 
-## 📝 License
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This project is [MIT](./MIT.md) licensed.
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+The [Gutenberg Project](https://www.gutenberg.org/) for providing this amazing library.
+[Gareth B. Johnson](https://github.com/garethbjohnson/gutendex) provided the [Gutendex API](https:/gutendex.com)
+[Original design](<https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)>) idea by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on Behance.\
+[Microverse](https://www.microverse.org/) for inpiring this project and giving the guidelines to develope it.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **Can I contribute to the project?**
+
+  - Yes. By all means feel free to clone the repository and make your changes. (Always use a new branch)
+
+- **Can I use this application freely?**
+
+  - You can use the application as long as you give credit where it is needed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
