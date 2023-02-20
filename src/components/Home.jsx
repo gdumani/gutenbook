@@ -22,16 +22,16 @@ const Home = () => {
     dispatch(setFilter(name, value));
   };
   return (
-    <div>
+    <div className="main">
       <h1>GUTENBÜCHER</h1>
-      <form>
+      <form className="searchform">
         <input type="text" name="topic" placeholder="topic" onChange={handleChange} value={topic} />
         <input type="text" name="search" placeholder="Search author/title" onChange={handleChange} value={search} />
         <input type="text" name="languages" placeholder="languages separated by coma" onChange={handleChange} value={languages} />
         <button type="button" onClick={() => dispatch(getBooks(newUrl(searchFilter)))}>Search</button>
         <button type="button" onClick={() => dispatch(clearFilter())}>Clear</button>
       </form>
-      <p>
+      <p className="pages">
         {((/page=\d*/g).test(previous)) && (
         <span>
           {'Page '}

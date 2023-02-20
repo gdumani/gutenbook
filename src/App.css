@@ -1,21 +1,20 @@
-.App {
+.main {
+  background-color: #FF5698;
+}
+h1 {
   text-align: center;
+  padding: .5rem;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.pages {
+  position: sticky;
+  top: 0;
+  background-color: #DF4783;
+  margin: auto;
+  padding: .5rem;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
+.searchform {
+  padding: 1rem;
 }
 
 .grid-container {
@@ -25,20 +24,17 @@
 
 .grid-item {
   height: auto;
-  background-color: #A8A8A8;
+  background-color: #B53360;
   color:white;
   text-decoration: none;
+  padding-left: 1rem;
 }
 
-.grid-item:nth-child(1) {
-  background-color: #C8C8C8;
-}
-
-.grid-item:nth-child(4n) {
-  background-color: #C8C8C8;
-}
-
+.grid-item:nth-child(1),
+.grid-item:nth-child(4n),
 .grid-item:nth-child(4n+1) {
-  background-color: #C8C8C8;
+  background-color: #DF4783;
 }
+
+
 
