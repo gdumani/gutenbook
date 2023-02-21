@@ -29,6 +29,10 @@
 **GutenBücher** is a React-Redux webapp using the [Gutendex API ](https://gutendex.com/) to get access to the [Gutenber Project](https://www.gutenberg.org/) library of more 60,000 free books. The app allows to search books by topic, title/author and language.
 It also links to the HTML readable version of the selected book. The listings are sorted by popularity according to the number of downloads they get
 
+## Screenshot
+
+![screenshot](./Screenshot_gutenbook.png)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
