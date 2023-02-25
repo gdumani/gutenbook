@@ -25,6 +25,10 @@ img {
   height: auto;
 }
 
+.smaller{
+  font-size: .7rem;
+}
+
 .pages {
   position: sticky;
   top: 0;

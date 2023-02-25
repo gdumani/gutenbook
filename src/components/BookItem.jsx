@@ -9,7 +9,7 @@ const BookItem = (props) => {
   const image = `https://www.gutenberg.org/cache/epub/${id}/pg${id}.cover.small.jpg`;
   return (
     <Link to={`book/${id}`} className="grid-item">
-      <p>
+      <p className="smaller">
         id:
         {id}
       </p>
