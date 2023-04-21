@@ -18,7 +18,6 @@ const initialState = { searchFilter: { topic: '', search: '', languages: '' } };
 // };
 export const getBooks = createAsyncThunk('home/getBooks', async (url = `${URL}/`) => {
   const response = await axios.get(url).then((apiBooks) => (apiBooks.data));
-  console.log(response);
   return response;
 });
 
