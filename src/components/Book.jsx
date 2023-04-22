@@ -10,13 +10,14 @@ const Book = () => {
 
   return (
     <div className="main">
-      <Link to="/">
-        <img src={backArrow} alt="back" className="back" />
-      </Link>
-      <h2>{book.title}</h2>
-      <img src={image} alt="book.name" />
+      <div className="title">
+        <Link to="/">
+          <img src={backArrow} alt="back" className="back" />
+        </Link>
+        <h2>{book.title}</h2>
+      </div>
+      <img src={image} alt="book.name" className="cover" />
       <div className="details-grid">
-
         <div className="details-item">
           {book.authors.map((author, i) => {
             const key = i;
@@ -45,7 +46,7 @@ const Book = () => {
           {' '}
           downloads
         </p>
-        <a href={book.formats['text/html']} target="_blank" rel="noreferrer">Go read it</a>
+        <a className="read" href={book.formats['text/html']} target="_blank" rel="noreferrer">Go read it</a>
       </div>
     </div>
 

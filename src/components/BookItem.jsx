@@ -13,7 +13,7 @@ const BookItem = (props) => {
         id:
         {id}
       </p>
-      <img src={image} alt="cover" />
+      <img src={image} alt="cover" className="cover" />
       <h4>{title}</h4>
       <p>{(authors[0]) ? authors[0].name : '**No data**'}</p>
       <div>
