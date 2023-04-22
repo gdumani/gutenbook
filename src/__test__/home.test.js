@@ -1,19 +1,30 @@
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import store from '../redux/configureStore';
 import reducer, {
-  GET_BOOKS, SET_FILTER, CLEAR_FILTER, newUrl,
-} from '../redux/home/home';
+  getBooks, setFilter, clearFilter, newUrl,
+} from '../redux/home/homeSlice';
 
 const state = { searchFilter: { topic: '', search: '', languages: '' } };
+const mockApi = () => {
+  const mock = new MockAdapter(axios);
+  mock.onGet('/').reply(200, { data1: '1', data2: '2' });
+};
 
-describe('reducer actions test', () => {
-  it('action GET_BOOKS', () => {
-    const response = { data1: '1', data2: '2' };
-    const action = { type: GET_BOOKS, payload: response };
-    const result = reducer(state, action);
-    expect(result).toEqual({ searchFilter: { topic: '', search: '', languages: '' }, data1: '1', data2: '2' });
+describe('reducer fetch books from API', () => {
+  beforeAll(() => mockApi());
+
+  it('action GET_BOOKS', async () => {
+    const result = await store.dispatch(getBooks('/'));
+    expect(result.payload).toEqual({ data1: '1', data2: '2' });
+    expect(result.type).toBe('home/getBooks/fulfilled');
+    expect(store.getState().home).toEqual({ searchFilter: { topic: '', search: '', languages: '' }, data1: '1', data2: '2' });
   });
+});
 
+describe('reducer actions tests', () => {
   it('action SET_FILTER', () => {
-    const action = { type: SET_FILTER, payload: { languages: 'sp' } };
+    const action = { type: setFilter, payload: { languages: 'sp' } };
     const result = reducer(state, action);
     expect(result).not.toEqual({ searchFilter: { topic: '', search: '', languages: 'en' } });
     expect(result).not.toEqual({ searchFilter: { topic: '', search: '', languages: '' } });
@@ -22,7 +33,7 @@ describe('reducer actions test', () => {
 
   it('action CLEAR_FILTER', () => {
     const filterState = { searchFilter: { topic: 'drama', search: 'dumas', languages: 'fr' }, data1: '1', data2: '2' };
-    const action = { type: CLEAR_FILTER, payload: { searchFilter: { topic: '', search: '', languages: '' } } };
+    const action = { type: clearFilter, payload: { searchFilter: { topic: '', search: '', languages: '' } } };
     const result = reducer(filterState, action);
     expect(result).not.toEqual({ searchFilter: { topic: 'drama', search: 'dumas', languages: 'fr' }, data1: '1', data2: '2' });
     expect(result).toEqual({ searchFilter: { topic: '', search: '', languages: '' }, data1: '1', data2: '2' });

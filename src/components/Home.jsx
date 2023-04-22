@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   clearFilter, getBooks, newUrl, setFilter,
-} from '../redux/home/home';
+} from '../redux/home/homeSlice';
 import BookItem from './BookItem';
 
 const Home = () => {
-  const books = useSelector((store) => store.homeReducer);
+  const books = useSelector((store) => store.home);
   const dispatch = useDispatch();
   useEffect(() => { dispatch(getBooks()); }, [dispatch]);
 
@@ -19,7 +19,8 @@ const Home = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    dispatch(setFilter(name, value));
+    const data = { [name]: value };
+    dispatch(setFilter(data));
   };
   return (
     <div className="main">
