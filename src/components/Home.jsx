@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   clearFilter, getBooks, newUrl, setFilter,
-} from '../redux/home/home';
+} from '../redux/home/homeSlice';
 import BookItem from './BookItem';
 
 const Home = () => {
